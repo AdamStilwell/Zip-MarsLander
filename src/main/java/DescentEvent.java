@@ -21,13 +21,6 @@ public class DescentEvent {
         return this.Altitude;
     }
 
-    public void setFinalStatus(){
-        if(getAltitude()-getVelocity() <=0){
-            Vehicle v = new Vehicle(getAltitude());
-            Status = v.Flying;
-        }
-    }
-
     public int getStatus() { return this.Status; }
     @Override
     public String toString() {
