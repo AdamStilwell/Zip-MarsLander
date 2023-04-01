@@ -67,15 +67,17 @@ public class Simulation {
         }
         printString(vehicle.checkFinalStatus());
         if (status != null) {
-            return status.getStatus();
+            return vehicle.Flying;
         }
         return -1;
     }
 
     public static void main(String[] args) {
         // create a new Simulation object with a random starting altitude
+        Simulation sim = new Simulation(new Vehicle(randomaltitude()));
         // create a new BurnInputStream
+        BurnInputStream bIS = new BurnInputStream();
         // pass the new BurnInputStream to the runSimulation method
+        sim.runSimulation(bIS);
     }
-
 }

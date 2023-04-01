@@ -10,6 +10,7 @@ public class DescentEvent {
         this.Velocity = sp;
         this.Fuel = f;
         this.Altitude = h;
+        this.Status = st;
     }
 
     public int getVelocity() {
@@ -19,6 +20,14 @@ public class DescentEvent {
     public int getAltitude() {
         return this.Altitude;
     }
+
+    public void setFinalStatus(){
+        if(getAltitude()-getVelocity() <=0){
+            Vehicle v = new Vehicle(getAltitude());
+            Status = v.Flying;
+        }
+    }
+
     public int getStatus() { return this.Status; }
     @Override
     public String toString() {
